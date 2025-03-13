@@ -1,1 +1,127 @@
-Hello World
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+        header {
+            background: #0a74da;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #084298;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background: #0056b3;
+            border-radius: 5px;
+        }
+        section {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+        .active {
+            display: block;
+        }
+        .projeto {
+            background: #292929;
+            padding: 15px;
+            margin: 15px auto;
+            width: 80%;
+            border-radius: 10px;
+        }
+        .projeto a {
+            color: #0a74da;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer {
+            background: #0a74da;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Meu Portfólio
+    </header>
+    <nav>
+        <a href="#" onclick="showSection(event, 'sobre')">Sobre Mim</a>
+        <a href="#" onclick="showSection(event, 'projetos')">Projetos</a>
+        <a href="#" onclick="showSection(event, 'contato')">Contato</a>
+        <a href="https://github.com/Luc710#" target="_blank">GitHub</a>
+    </nav>
+    
+    <section id="sobre" class="active">
+        <h2>Sobre Mim</h2>
+        <p>Sou um desenvolvedor web apaixonado por tecnologia e inovação. Busco sempre criar soluções eficientes e criativas para desafios do mundo digital.</p>
+    </section>
+    
+    <section id="projetos">
+        <h2>Projetos</h2>
+        
+        <div class="projeto">
+            <h3>Projeto: God of War</h3>
+            <p>Um site dedicado à saga God of War, trazendo informações, imagens e trailers do jogo.</p>
+            <a href="God of War.html" target="_blank">Ver Projeto</a>
+        </div>
+        
+        <div class="projeto">
+            <h3>Projeto: Sousou no Frieren</h3>
+            <p>Uma página sobre o anime Sousou no Frieren, com galeria, informações e personagens.</p>
+            <a href="Aula14.Html.html" target="_blank">Ver Projeto</a>
+        </div>
+        
+        <div class="projeto">
+            <h3>Projeto: Re:Zero</h3>
+            <p>Uma página sobre o anime Re:Zero, destacando Subaru Natsuki e sua jornada.</p>
+            <a href="html.html" target="_blank">Ver Projeto</a>
+        </div>
+    </section>
+    
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Email: <a href="mailto:lucascosme59303@gmail.com">lucascosme59303@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://br.linkedin.com/in/lucas-cau%C3%A3-90601b346" target="_blank">Meu LinkedIn</a></p>
+    </section>
+    
+    <footer>
+        © 2025 - Desenvolvido por Lucas Cauã
+    </footer>
+
+    <script>
+        function showSection(event, id) {
+            event.preventDefault();
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+  </html>
