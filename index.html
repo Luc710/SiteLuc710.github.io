@@ -111,18 +111,25 @@
 
         /* Projetos */
         .projeto {
-            background: #292929;
-            padding: 15px;
-            margin: 15px auto;
-            width: 80%;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .projeto img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
+    background: #292929;
+    padding: 15px;
+    margin: 15px auto;
+    width: 80%;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.projeto img {
+    width: 100%;
+    max-width: 500px; /* Ajuste o tamanho máximo da imagem */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3); /* Efeito de sombra para dar destaque */
+    margin-bottom: 20px; /* Espaçamento entre a imagem e o texto */
+}
 
         /* Código */
         pre {
@@ -134,6 +141,7 @@
             word-wrap: break-word;
             text-align: left;
             overflow-x: auto;
+       
         }
 
         /* Rodapé */
@@ -150,13 +158,24 @@
             color: #0ff;
             text-shadow: 0px 0px 5px #0ff, 0px 0px 10px #0ff, 0px 0px 20px #0ff;
         }
+
+        /* Estilo para a foto de perfil */
+        .perfil {
+            width: 150px; /* Ajuste o tamanho conforme necessário */
+            height: 150px;
+            border-radius: 100%; /* Faz a imagem ficar redonda */
+            object-fit: cover; /* Faz a imagem se ajustar bem no formato circular */
+            margin-bottom: 20px; /* Espaçamento entre a imagem e o texto */
+        }
+
+
     </style>
 </head>
 <body>
 
     <!-- Tela de Boas-Vindas -->
     <div id="welcome-screen">
-        <h1 class="neon">Bem-vindo ao meu Portfólio!</h1>
+        <h1 class="neon">Bem-vindo ao meu Portfólio🧑🏻‍🎓!</h1>
         <button onclick="enterSite()">Entrar</button>
     </div>
 
@@ -178,8 +197,18 @@
 
     <!-- Seção Sobre Mim -->
     <section id="sobre" class="active">
-        <h2 class="neon">Sobre Mim</h2>
-        <p>Sou um desenvolvedor web com experiência em HTML, CSS, JavaScript e frameworks modernos. Minha paixão é criar experiências digitais dinâmicas e imersivas.</p>
+        <h2 class="neon">Minha Jornada no Desenvolvimento Web</h2>
+        <!-- Foto de perfil -->
+        <img src="https://avatars.githubusercontent.com/u/191176005?s=400&u=ccae90a1cf8ee3ed00d4ab5c21332bfe6c2337cc&v=4" alt="Lucas Cauã" class="perfil">
+        <p>Sou estudante de programação e atualmente estou me aprofundando no mundo do desenvolvimento web, com foco em HTML e CSS. Minha paixão pela criação de sites e interfaces começa com o desejo de construir experiências digitais que sejam não apenas funcionais, mas também bonitas e fáceis de usar.
+
+            Ao longo do meu aprendizado, desenvolvi uma sólida compreensão das tecnologias web, com uma ênfase particular na criação de sites responsivos que se adaptam a diferentes dispositivos e tamanhos de tela. Acredito que a base para um bom design está na simplicidade e na clareza, e busco sempre aprimorar minhas habilidades para criar interfaces que proporcionem uma experiência agradável para o usuário.
+            
+            Além de HTML e CSS, estou explorando conceitos como Flexbox, Grid Layout e animações CSS, que são ferramentas poderosas para criar layouts modernos e dinâmicos. Adoro o processo de transformar ideias em realidade, seja criando uma página pessoal ou desenvolvendo projetos mais desafiadores.
+            
+            Estou sempre em busca de novos desafios e oportunidades para crescer como desenvolvedor. Este portfólio reúne alguns dos projetos que fiz até agora e que demonstram as habilidades que estou adquirindo. Acredito que, com dedicação e prática, posso sempre melhorar e atingir novos patamares no desenvolvimento web.
+            
+            Se você está interessado em saber mais sobre meus projetos ou se gostaria de entrar em contato, fique à vontade para me enviar uma mensagem😄!</p>
     </section>
 
     <!-- Seção Projetos -->
@@ -189,9 +218,10 @@
         <div class="projeto">
             <h3>Projeto: Sousou no Frieren</h3>
             <img src="https://i0.wp.com/www.jbox.com.br/wp/wp-content/uploads/2024/03/20240313_182301.jpg?resize=768%2C1152&ssl=1" alt="Sousou no Frieren">
-            Frieren é uma ex-membro de um grupo de aventureiros que derrotou o Rei Demônio. Após o feito, o grupo se separa e Frieren embarca em uma nova jornada, buscando grimórios mágicos e se conectando melhor com os humanos. 
-
+            *Frieren: Beyond Journey's End* é uma série de mangá e anime que segue a elfa mage Frieren, que, após a derrota do Rei Demoníaco, continua sua jornada sozinha enquanto seus companheiros de aventura envelhecem e morrem. O enredo foca no luto de Frieren pela passagem do tempo e em como ela começa a entender melhor as emoções humanas, especialmente ao conhecer novos aliados e seguir sua própria jornada de autoconhecimento. A obra mistura fantasia, reflexão sobre o tempo e a importância das conexões entre pessoas.
+            
             <pre>
+                                                 <h2 class="neon">CÓDIGO EXIBIDO</h2>
 <code>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="pt-BR"&gt;
@@ -222,61 +252,22 @@
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body class="bg-light text-dark"&gt;
-
-&lt;header class="bg-primary text-white text-center py-4"&gt;
-    &lt;h1 class="fw-bold"&gt;Sousou no Frieren&lt;/h1&gt;
-    &lt;p class="lead"&gt;Uma jornada emocionante sobre o tempo e as conexões humanas.&lt;/p&gt;
-&lt;/header&gt;
-
-&lt;nav class="navbar navbar-expand-lg navbar-light bg-light shadow"&gt;
-    &lt;div class="container"&gt;
-        &lt;a class="navbar-brand" href="#"&gt;Sousou no Frieren&lt;/a&gt;
-        &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação"&gt;
-            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
-            &lt;ul class="navbar-nav ms-auto"&gt;
-                &lt;li class="nav-item"&gt;&lt;a class="nav-link active" href="#sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
-                &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#mensagem"&gt;Mensagem&lt;/a&gt;&lt;/li&gt;
-                &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#galeria"&gt;Galeria&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/nav&gt;
-
-&lt;main class="container my-5"&gt;
-    &lt;section id="sobre" class="mb-5"&gt;
-        &lt;article&gt;
-            &lt;h2 class="text-primary mb-3"&gt;Sobre a História&lt;/h2&gt;
-            &lt;p&gt;
-                "Sousou no Frieren" é um anime baseado no mangá homônimo que segue a jornada de Frieren, uma elfa maga que fez parte de um lendário grupo de aventureiros que derrotou o Rei Demônio.
-            &lt;/p&gt;
-        &lt;/article&gt;
-    &lt;/section&gt;
-&lt;/main&gt;
-
-&lt;footer class="bg-primary text-white text-center py-4"&gt;
-    &lt;p class="mb-0"&gt;Feito com ❤ para fãs de Sousou no Frieren&lt;/p&gt;
-&lt;/footer&gt;
-
-&lt;!-- Scripts do Bootstrap --&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<!-- Conteúdo aqui -->
 </code>
 </pre>
-            <h1>  
         </div>
-       
         <div class="projeto">
             <h3>Projeto: Re:Zero</h3>
+            
             <img src="https://i0.wp.com/www.otakupt.com/wp-content/uploads/2024/11/ReZERO-3-Part-2-visual-1-scaled.jpg?resize=768%2C1086&ssl=1" alt="Re:Zero">
-            Re:Zero – Starting Life in Another World segue Subaru Natsuki, um jovem que é transportado para um mundo de fantasia sem poderes aparentes, exceto a habilidade de "Retorno pela Morte", que o faz reviver a partir de um ponto específico toda vez que morre. Ele se vê envolvido em intrigas políticas, perigos mortais e dilemas emocionais, especialmente ao tentar proteger Emilia, uma meia-elfa com quem cria um forte laço. A história é marcada por reviravoltas, sofrimento psicológico e um desenvolvimento profundo dos personagens.
-
-  </h1>
+        
+            
+        Re:Zero - Starting Life in Another World é uma série de anime e light novel que segue Subaru Natsuki, um jovem que é transportado para um mundo paralelo. Ele descobre que, ao morrer, tem a habilidade de "voltar no tempo", mas a cada morte, o sofrimento e as consequências se acumulam. Subaru tenta usar essa habilidade para salvar as pessoas que encontra, especialmente a princesa Emilia, enquanto enfrenta perigos e complexidades emocionais. A trama mistura elementos de fantasia, mistério e psicologia, explorando temas como perseverança, sacrifício e os dilemas das escolhas.
+            
+            
             <pre>
-    <code>
+                <h2 class="neon">CÓDIGO EXIBIDO</h2>
+                <code>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="pt-BR"&gt;
 &lt;head&gt;
@@ -326,116 +317,14 @@ nav ul li a:hover {
     color: #a8dadc;
     text-shadow: 0px 0px 5px #ffffff;
 }
-.image-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background: linear-gradient(to bottom, #8d99ae, #2b2d42);
-}
-.image-section img {
-    max-width: 80%;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-main {
-    padding: 20px;
-}
-main h2 {
-    font-size: 1.8em;
-    color: #e63946;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-    margin-bottom: 10px;
-}
-main p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #ffffff;
-}
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #1d3557;
-    color: #ffffff;
-    font-size: 0.9em;
-    border-top: 2px solid #457b9d;
-}
-a {
-    color: #f4a261;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    nav ul li {
-        margin: 10px 0;
-    }
-    main h2 {
-        font-size: 1.5em;
-    }
-    main p {
-        font-size: 1em;
-    }
-}
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-
-    &lt;header&gt;
-        &lt;h1&gt;Re:Zero - Starting Life in Another World&lt;/h1&gt;
-    &lt;/header&gt;
-
-    &lt;nav&gt;
-        &lt;ul&gt;
-            &lt;li&gt;&lt;a href="#"&gt;Início&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#"&gt;Sobre o Anime&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#"&gt;Personagens&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#"&gt;Contato&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;
-
-    &lt;section class="image-section"&gt;
-        &lt;img src="https://i.pinimg.com/736x/ed/40/d9/ed40d9919fb49805d808faac0822d37d.jpg" alt="Subaru Natsuki"&gt;
-    &lt;/section&gt;
-
-    &lt;main&gt;
-        &lt;section&gt;
-            &lt;h2&gt;Quem é Subaru Natsuki?&lt;/h2&gt;
-            &lt;p&gt;
-                Subaru Natsuki é o protagonista do anime &lt;strong&gt;Re:Zero - Starting Life in Another World&lt;/strong&gt;. 
-                Após ser transportado para um mundo paralelo, ele descobre que possui uma habilidade especial chamada 
-                &lt;em&gt;"Retorno pela Morte"&lt;/em&gt;, que o permite voltar no tempo após morrer. Apesar de seu comportamento
-                brincalhão, Subaru enfrenta muitas dificuldades, mostrando seu crescimento emocional e determinação 
-                para proteger aqueles que ama.
-            &lt;/p&gt;
-        &lt;/section&gt;
-
-        &lt;section&gt;
-            &lt;h2&gt;Sobre o Anime&lt;/h2&gt;
-            &lt;p&gt;
-                Re:Zero é um anime baseado em uma light novel escrita por Tappei Nagatsuki. A trama gira em torno 
-                das dificuldades enfrentadas por Subaru em um mundo de fantasia cheio de perigos, intrigas e desafios. 
-                A narrativa é conhecida por suas reviravoltas e pelo desenvolvimento profundo de personagens.
-            &lt;/p&gt;
-        &lt;/section&gt;
-    &lt;/main&gt;
-
-    &lt;footer&gt;
-        &lt;p&gt;&amp;copy; 2024 - Página sobre Re:Zero e Subaru Natsuki&lt;/p&gt;
-    &lt;/footer&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-    </code>
+<!-- Conteúdo aqui -->
+</code>
 </pre>
         </div>
     </section>
-
 
     <!-- Seção Contato -->
     <section id="contato">
