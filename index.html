@@ -1,346 +1,220 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Lucas Cauã, desenvolvedor web focado em experiências dinâmicas e imersivas.">
+    <meta name="description"
+        content="Portfólio de Lucas Cauã, desenvolvedor web focado em experiências dinâmicas e imersivas.">
     <title>Lucas Cauã - Portfólio</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Reset e Estilo Geral */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e1e;
-            color: #fff;
-            text-align: center;
-            overflow-x: hidden;
-        }
-
-        /* Tela de Boas-Vindas */
-        #welcome-screen {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: #1e1e1e;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            z-index: 1000;
-            transition: opacity 1s ease-in-out;
-        }
-
-        #welcome-screen h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-shadow: 0px 0px 5px #0ff, 0px 0px 10px #0ff;
-        }
-
-        #welcome-screen button {
-            background: #0a74da;
-            color: white;
-            font-size: 1.5rem;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        #welcome-screen button:hover {
-            background: #084298;
-        }
-
-        /* Partículas */
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: #8d8d8d;
-            z-index: -1;
-        }
-
-        /* Cabeçalho */
-        header {
-            background: #ff004c;
-            padding: 20px;
-            font-size: 2rem;
-            text-shadow: 0px 0px 10px rgb(27, 21, 36);
-        }
-
-        /* Navegação */
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #000000;
-            padding: 10px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 10px;
-            font-weight: bold;
-            transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
-        }
-        nav a:hover {
-            color: #ff0;
-            text-shadow: 0px 0px 5px #ff0, 0px 0px 10px #ff0;
-        }
-
-        /* Seções */
-        section {
-            display: none;
-            padding: 20px;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
-        }
-        .active {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Projetos */
-        .projeto {
-    background: #292929;
-    padding: 15px;
-    margin: 15px auto;
-    width: 80%;
-    border-radius: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.projeto img {
-    width: 100%;
-    max-width: 500px; /* Ajuste o tamanho máximo da imagem */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3); /* Efeito de sombra para dar destaque */
-    margin-bottom: 20px; /* Espaçamento entre a imagem e o texto */
-}
-
-        /* Código */
-        pre {
-            background-color: #333;
-            color: #f5f5f5;
-            padding: 20px;
-            border-radius: 5px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            text-align: left;
-            overflow-x: auto;
-       
-        }
-
-        /* Rodapé */
-        footer {
-            background: #ff004c;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
-        }
-
-        /* Neon */
-        .neon {
-            color: #0ff;
-            text-shadow: 0px 0px 5px #0ff, 0px 0px 10px #0ff, 0px 0px 20px #0ff;
-        }
-
-        /* Estilo para a foto de perfil */
-        .perfil {
-            width: 150px; /* Ajuste o tamanho conforme necessário */
-            height: 150px;
-            border-radius: 100%; /* Faz a imagem ficar redonda */
-            object-fit: cover; /* Faz a imagem se ajustar bem no formato circular */
-            margin-bottom: 20px; /* Espaçamento entre a imagem e o texto */
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="lucas.css">
 </head>
+
 <body>
 
     <!-- Tela de Boas-Vindas -->
-    <div id="welcome-screen">
+    <div id="welcome-screen" aria-label="Tela de Boas-Vindas">
         <h1 class="neon">Bem-vindo ao meu Portfólio🧑🏻‍🎓!</h1>
         <button onclick="enterSite()">Entrar</button>
     </div>
 
     <!-- Fundo de Partículas -->
-    <div id="particles-js"></div>
+    <div id="particles-js" aria-hidden="true"></div>
 
     <!-- Cabeçalho -->
-    <header class="rgb">
-        Lucas Cauã - Portfólio
+    <header>
+        <h1>Lucas Cauã - Portfólio</h1>
     </header>
 
     <!-- Navegação -->
     <nav>
-        <a href="#" onclick="showSection(event, 'sobre')">Sobre Mim 📝</a>
-        <a href="#" onclick="showSection(event, 'projetos')">Projetos 📁</a>
-        <a href="#" onclick="showSection(event, 'contato')">Contato 📞</a>
-        <a href="https://github.com/Luc710#" target="_blank">GitHub 💻</a>
+        <ul>
+            <li><a href="#" onclick="showSection(event, 'sobre')">Sobre Mim 📝</a></li>
+            <li><a href="#" onclick="showSection(event, 'projetos')">Projetos 📁</a></li>
+            <li><a href="#" onclick="showSection(event, 'contato')">Contato 📞</a></li>
+            <li><a href="https://github.com/Luc710#" target="_blank">GitHub 💻</a></li>
+        </ul>
     </nav>
 
     <!-- Seção Sobre Mim -->
-    <section id="sobre" class="active">
-        <h2 class="neon">Minha Jornada no Desenvolvimento Web</h2>
-        <!-- Foto de perfil -->
-        <img src="https://avatars.githubusercontent.com/u/191176005?s=400&u=ccae90a1cf8ee3ed00d4ab5c21332bfe6c2337cc&v=4" alt="Lucas Cauã" class="perfil">
-        <p>Sou estudante de programação e atualmente estou me aprofundando no mundo do desenvolvimento web, com foco em HTML e CSS. Minha paixão pela criação de sites e interfaces começa com o desejo de construir experiências digitais que sejam não apenas funcionais, mas também bonitas e fáceis de usar.
+    <main>
+        <section id="sobre" class="active">
+            <h2 class="neon">Minha Jornada no Desenvolvimento Web</h2>
+            <!-- Foto de perfil -->
+            <img src="https://avatars.githubusercontent.com/u/191176005?s=400&u=ccae90a1cf8ee3ed00d4ab5c21332bfe6c2337cc&v=4"
+                alt="Lucas Cauã" class="perfil" loading="lazy">
+            <p>Sou estudante de programação e atualmente estou me aprofundando no mundo do desenvolvimento web, com foco
+                em
+                HTML e CSS. Minha paixão pela criação de sites e interfaces começa com o desejo de construir
+                experiências
+                digitais que sejam não apenas funcionais, mas também bonitas e fáceis de usar. Ao longo do meu
+                aprendizado, desenvolvi uma sólida compreensão das tecnologias web, com uma ênfase particular na criação
+                de sites responsivos que se adaptam a diferentes dispositivos e tamanhos de tela. Acredito que a base
+                para um bom design está na simplicidade e na clareza, e busco sempre aprimorar minhas habilidades para
+                criar interfaces que proporcionem uma experiência agradável para o usuário.
 
-            Ao longo do meu aprendizado, desenvolvi uma sólida compreensão das tecnologias web, com uma ênfase particular na criação de sites responsivos que se adaptam a diferentes dispositivos e tamanhos de tela. Acredito que a base para um bom design está na simplicidade e na clareza, e busco sempre aprimorar minhas habilidades para criar interfaces que proporcionem uma experiência agradável para o usuário.
-            
-            Além de HTML e CSS, estou explorando conceitos como Flexbox, Grid Layout e animações CSS, que são ferramentas poderosas para criar layouts modernos e dinâmicos. Adoro o processo de transformar ideias em realidade, seja criando uma página pessoal ou desenvolvendo projetos mais desafiadores.
-            
-            Estou sempre em busca de novos desafios e oportunidades para crescer como desenvolvedor. Este portfólio reúne alguns dos projetos que fiz até agora e que demonstram as habilidades que estou adquirindo. Acredito que, com dedicação e prática, posso sempre melhorar e atingir novos patamares no desenvolvimento web.
-            
-            Se você está interessado em saber mais sobre meus projetos ou se gostaria de entrar em contato, fique à vontade para me enviar uma mensagem😄!</p>
-    </section>
+                Além de HTML e CSS, estou explorando conceitos como Flexbox, Grid Layout e animações CSS, que são
+                ferramentas poderosas para criar layouts modernos e dinâmicos. Adoro o processo de transformar ideias em
+                realidade, seja criando uma página pessoal ou desenvolvendo projetos mais desafiadores.
 
-    <!-- Seção Projetos -->
-    <section id="projetos">
-        <h2 class="neon">Projetos</h2>
+                Estou sempre em busca de novos desafios e oportunidades para crescer como desenvolvedor. Este portfólio
+                reúne alguns dos projetos que fiz até agora e que demonstram as habilidades que estou adquirindo.
+                Acredito que, com dedicação e prática, posso sempre melhorar e atingir novos patamares no
+                desenvolvimento web.
 
-        <div class="projeto">
-            <h3>Projeto: Sousou no Frieren</h3>
-            <img src="https://i0.wp.com/www.jbox.com.br/wp/wp-content/uploads/2024/03/20240313_182301.jpg?resize=768%2C1152&ssl=1" alt="Sousou no Frieren">
-            *Frieren: Beyond Journey's End* é uma série de mangá e anime que segue a elfa mage Frieren, que, após a derrota do Rei Demoníaco, continua sua jornada sozinha enquanto seus companheiros de aventura envelhecem e morrem. O enredo foca no luto de Frieren pela passagem do tempo e em como ela começa a entender melhor as emoções humanas, especialmente ao conhecer novos aliados e seguir sua própria jornada de autoconhecimento. A obra mistura fantasia, reflexão sobre o tempo e a importância das conexões entre pessoas.
-            
-            <pre>
-                                                 <h2 class="neon">CÓDIGO EXIBIDO</h2>
+                Se você está interessado em saber mais sobre meus projetos ou se gostaria de entrar em contato, fique à
+                vontade para me enviar uma mensagem😄!</p>
+        </section>
+
+        <!-- Seção Projetos -->
+        <section id="projetos">
+            <h2 class="neon">Projetos</h2>
+            <article class="projeto">
+                <h3>Projeto: Sousou no Frieren</h3>
+                <img src="https://i0.wp.com/www.jbox.com.br/wp/wp-content/uploads/2024/03/20240313_182301.jpg?resize=768%2C1152&ssl=1"
+                    alt="Sousou no Frieren" loading="lazy">
+                <p>*Frieren: Beyond Journey's End* é uma série de mangá e anime que segue a elfa mage Frieren, que, após
+                    a
+                    derrota do Rei Demoníaco, continua sua jornada sozinha enquanto seus companheiros de aventura
+                    envelhecem e
+                    morrem. O enredo foca no luto de Frieren pela passagem do tempo e em como ela começa a entender
+                    melhor as
+                    emoções humanas, especialmente ao conhecer novos aliados e seguir sua própria jornada de
+                    autoconhecimento. A
+                    obra mistura fantasia, reflexão sobre o tempo e a importância das conexões entre pessoas.</p>
+                <pre>
+                        <h2 class="neon">CÓDIGO EXIBIDO</h2>
 <code>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="pt-BR"&gt;
 &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;meta name="description" content="Sousou no Frieren é uma emocionante jornada sobre o tempo e as conexões humanas, baseada no mangá e anime homônimos."&gt;
-    &lt;title&gt;Sousou no Frieren&lt;/title&gt;
-    &lt;!-- Link do Bootstrap CSS --&gt;
-    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
-    &lt;style&gt;
-        html {
-            scroll-behavior: smooth;
-        }
-        .card-text {
-            display: block;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        @media (max-width: 767px) {
-            .card-text {
-                white-space: normal;
-                overflow: visible;
-                text-overflow: clip;
-            }
-        }
-    &lt;/style&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content="Sousou no Frieren é uma emocionante jornada sobre o tempo e as conexões humanas, baseada no mangá e anime homônimos."&gt;
+&lt;title&gt;Sousou no Frieren&lt;/title&gt;
+&lt;!-- Link do Bootstrap CSS --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;style&gt;
+html {
+scroll-behavior: smooth;
+}
+.card-text {
+display: block;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+@media (max-width: 767px) {
+.card-text {
+white-space: normal;
+overflow: visible;
+text-overflow: clip;
+}
+}
+&lt;/style&gt;
 &lt;/head&gt;
 &lt;body class="bg-light text-dark"&gt;
 <!-- Conteúdo aqui -->
 </code>
 </pre>
-        </div>
-        <div class="projeto">
-            <h3>Projeto: Re:Zero</h3>
-            
-            <img src="https://i0.wp.com/www.otakupt.com/wp-content/uploads/2024/11/ReZERO-3-Part-2-visual-1-scaled.jpg?resize=768%2C1086&ssl=1" alt="Re:Zero">
-        
-            
-        Re:Zero - Starting Life in Another World é uma série de anime e light novel que segue Subaru Natsuki, um jovem que é transportado para um mundo paralelo. Ele descobre que, ao morrer, tem a habilidade de "voltar no tempo", mas a cada morte, o sofrimento e as consequências se acumulam. Subaru tenta usar essa habilidade para salvar as pessoas que encontra, especialmente a princesa Emilia, enquanto enfrenta perigos e complexidades emocionais. A trama mistura elementos de fantasia, mistério e psicologia, explorando temas como perseverança, sacrifício e os dilemas das escolhas.
-            
-            
-            <pre>
-                <h2 class="neon">CÓDIGO EXIBIDO</h2>
-                <code>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="pt-BR"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Re:Zero - Subaru Natsuki&lt;/title&gt;
-    &lt;style&gt;
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #2b2d42, #8d99ae);
-    color: #ffffff;
-}
-header {
-    background-color: #1d3557;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-header h1 {
-    font-size: 2.5em;
-    color: #f8f9fa;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-nav {
-    background-color: #457b9d;
-    padding: 10px 0;
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-}
-nav ul li {
-    margin: 0 15px;
-}
-nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1.1em;
-    transition: color 0.3s ease;
-}
-nav ul li a:hover {
-    color: #a8dadc;
-    text-shadow: 0px 0px 5px #ffffff;
-}
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-<!-- Conteúdo aqui -->
-</code>
-</pre>
-        </div>
-    </section>
+            </article>
+            <article class="projeto">
+                <h3>Projeto: Re:Zero</h3>
+                <img src="https://i0.wp.com/www.otakupt.com/wp-content/uploads/2024/11/ReZERO-3-Part-2-visual-1-scaled.jpg?resize=768%2C1086&ssl=1"
+                    alt="Re:Zero" loading="lazy">
+                <p>Re:Zero - Starting Life in Another World é uma série de anime e light novel que segue Subaru Natsuki,
+                    um
+                    jovem que é transportado para um mundo paralelo. Ele descobre que, ao morrer, tem a habilidade de
+                    "voltar no
+                    tempo", mas a cada morte, o sofrimento e as consequências se acumulam. Subaru tenta usar essa
+                    habilidade
+                    para salvar as pessoas que encontra, especialmente a princesa Emilia, enquanto enfrenta perigos e
+                    complexidades emocionais. A trama mistura elementos de fantasia, mistério e psicologia, explorando
+                    temas
+                    como perseverança, sacrifício e os dilemas das escolhas.</p>
+                <pre>
+                        <h2 class="neon">CÓDIGO EXIBIDO</h2>
+                        <code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="pt-BR"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Re:Zero - Subaru Natsuki&lt;/title&gt;
+            &lt;style&gt;
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #2b2d42, #8d99ae);
+            color: #ffffff;
+        }
+        header {
+            background-color: #1d3557;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            font-size: 2.5em;
+            color: #f8f9fa;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        nav {
+            background-color: #457b9d;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #a8dadc;
+            text-shadow: 0px 0px 5px #ffffff;
+        }
+            &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        <!-- Conteúdo aqui -->
+        </code>
+        </pre>
+            </article>
+        </section>
 
-    <!-- Seção Contato -->
-    <section id="contato">
-        <h2 class="neon"> Entre em contato comigo! ☎️</h2>
-        <p>📩 Email: <a href="lucascosme59303@gmail.com">lucascosme59303@gmail.com</a></p>
-        <p>👤 LinkedIn: <a href="https://br.linkedin.com/in/lucas-cau%C3%A3-90601b346" target="_blank">Meu LinkedIn</a></p>
- <p>📱 Whatsapp: (84)99985-3868 </a></p>
-    </section>
-    
+        <!-- Seção Contato -->
+        <section id="contato">
+            <h2 class="neon"> Entre em contato comigo! ☎️</h2>
+            <p>📩 Email: <a href="mailto:lucascosme59303@gmail.com">lucascosme59303@gmail.com</a></p>
+            <p>👤 LinkedIn: <a href="https://br.linkedin.com/in/lucas-cau%C3%A3-90601b346" target="_blank">Meu
+                    LinkedIn</a>
+            </p>
+            <p>📱 Whatsapp: (84)99985-3868</p>
+        </section>
+    </main>
+
     <!-- Rodapé -->
     <footer>
         © 2025 - Desenvolvido por Lucas Cauã
     </footer>
 
+    <script src="scripts.js"></script>
     <script>
+        function showWelcomeScreen() {
+            document.getElementById("welcome-screen").style.display = "flex";
+        }
+
         function enterSite() {
             let welcomeScreen = document.getElementById("welcome-screen");
             welcomeScreen.style.opacity = "0";
@@ -356,4 +230,221 @@ nav ul li a:hover {
         }
     </script>
 </body>
-</html>
+
+<style>
+
+/* Reset e Estilo Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Tela de Boas-Vindas */
+#welcome-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1000;
+    transition: opacity 1s ease-in-out;
+}
+
+#welcome-screen h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 5px #0ff, 0px 0px 10px #0ff;
+}
+
+#welcome-screen button {
+    background: #0a74da;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+#welcome-screen button:hover {
+    background: #084298;
+}
+
+/* Partículas */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #8d8d8d;
+    z-index: -1;
+}
+
+/* Cabeçalho */
+header {
+    background: #ff004c;
+    padding: 20px;
+    font-size: 2rem;
+    text-shadow: 0px 0px 10px rgb(27, 21, 36);
+}
+
+/* Navegação */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ff0;
+    text-shadow: 0px 0px 5px #ff0, 0px 0px 10px #ff0;
+}
+
+/* Seções */
+section {
+    display: none;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Projetos */
+.projeto {
+    background: #292929;
+    padding: 15px;
+    margin: 15px auto;
+    width: 80%;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.projeto img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    margin-bottom: 20px;
+}
+
+/* Código */
+pre {
+    background-color: #333;
+    color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: Rigth;
+    overflow-x: auto;
+}
+
+/* Rodapé */
+footer {
+    background: #ff004c;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Neon */
+.neon {
+    color: #0ff;
+    text-shadow: 0px 0px 5px #0ff, 0px 0px 10px #0ff, 0px 0px 20px #0ff;
+}
+
+/* Estilo para a foto de perfil */
+.perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #welcome-screen h1 {
+        font-size: 2rem;
+    }
+
+    #welcome-screen button {
+        font-size: 1.2rem;
+        padding: 8px 16px;
+    }
+
+    header {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav a {
+        padding: 10px;
+    }
+
+    .projeto {
+        width: 90%;
+    }
+}
